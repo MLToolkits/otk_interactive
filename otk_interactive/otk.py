@@ -2,7 +2,7 @@ import plotly.express as px
 from optical_toolkit.embeddings import get_embeddings
 
 
-def otk_interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
+def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
     """
     Generate 2D or 3D interactive scatter plots from embeddings.
 
