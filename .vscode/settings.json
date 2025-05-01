@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "~/.cache/pypoetry/virtualenvs/application-PWXl5ygz-py3.8",
+    "python.pythonPath": "~/.cache/pypoetry/virtualenvs/otk_interactive-PWXl5ygz-py3.8",
     "python.testing.pytestArgs": [
         "tests"
     ],
