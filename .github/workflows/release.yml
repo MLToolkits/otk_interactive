@@ -32,10 +32,8 @@ jobs:
           python -m pip install --upgrade pip poetry
           poetry --version
 
-      - name: Install dependencies
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+      - name: Configure and install dependencies
         run: |
-          poetry check --no-interaction
           poetry config virtualenvs.in-project true
           poetry install --no-interaction
 
