@@ -37,7 +37,7 @@ jobs:
           poetry run pytest -v
       - name: Publish to PyPI
         env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+          PYPI_TOKEN: ${{ secrets.GLOBAL_PYPI_TOKEN }}
         run: |
-          poetry config pypi-token.pypi $PYPI_TOKEN
+          poetry config pypi-token.pypi $GLOBAL_PYPI_TOKEN
           poetry publish --build --no-interaction
