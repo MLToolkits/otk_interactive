@@ -1,5 +1,5 @@
 import plotly.express as px
-from optical_toolkit.embeddings import get_embeddings
+from optical_toolkit.visualize.embeddings import get_embeddings
 
 
 def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
@@ -15,8 +15,8 @@ def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
     Returns:
     - fig: Plotly Figure object.
     """
-    embeddings, _ = get_embeddings(
-        X, y, dims=dims, embedding_type=embedding_type, return_plot=False
+    embeddings = get_embeddings(
+        X, y, embedding_dims=dims, embedding_type=embedding_type, return_plot=False
     )
     df = {f"dim{i+1}": embeddings[:, i] for i in range(dims)}
     df["label"] = y
