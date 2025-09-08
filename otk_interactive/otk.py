@@ -47,3 +47,12 @@ def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
     fig.update_layout(margin=dict(l=0, r=0, b=0, t=30))
 
     return fig
+
+
+if __name__ == "__main__":
+    from sklearn.datasets import load_digits
+
+    digits = load_digits()
+    X, y = digits.images, digits.target
+
+    fig = interactive_embeddings(X, y, 2, "t-SNE embedding")

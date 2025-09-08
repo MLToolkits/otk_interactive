@@ -1,7 +1,10 @@
+SHELL := /bin/bash
+
 .PHONY: czc
 
 czc:
-	cz c && pre-commit run --all-files
+	cz c
+	pre-commit run --all-files
 
 .PHONY: deps
 
@@ -12,3 +15,8 @@ deps:
 	poetry install
 	poetry run pre-commit install
 	poetry env info
+
+.PHONY: activate
+
+activate:
+	source $$(poetry env info --path)/bin/activate
