@@ -15,8 +15,8 @@ def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
     Returns:
     - fig: Plotly Figure object.
     """
-    embeddings = get_embeddings(
-        X, y, embedding_dims=dims, embedding_type=embedding_type, return_plot=False
+    embeddings, _ = get_embeddings(
+        X, y, embedding_dims=dims, embedding_type=embedding_type, return_plot=True
     )
     df = {f"dim{i+1}": embeddings[:, i] for i in range(dims)}
     df["label"] = y
