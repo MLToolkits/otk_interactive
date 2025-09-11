@@ -19,7 +19,7 @@ def interactive_embeddings(X, y, dims=2, embedding_type="tsne"):
         X, y, embedding_dims=dims, embedding_type=embedding_type, return_plot=True
     )
     df = {f"dim{i+1}": embeddings[:, i] for i in range(dims)}
-    df["label"] = y
+    df["label"] = [str(label) for label in y]
 
     if dims == 2:
         fig = px.scatter(
@@ -56,3 +56,4 @@ if __name__ == "__main__":
     X, y = digits.images, digits.target
 
     fig = interactive_embeddings(X, y, 2, "t-SNE embedding")
+    fig.write_html("embedding_plot.html")
